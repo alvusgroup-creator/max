@@ -1,0 +1,9 @@
+Fotografias provisórias (Pexels, Licença Pexels).
+Substituir por fotografias reais mantendo o nome do ficheiro (proporção 4:3, 800x600).
+
+residencial.webp   https://www.pexels.com/photo/1571460/
+comercial.webp     https://www.pexels.com/photo/1029803/
+escritorios.webp   https://www.pexels.com/photo/1170412/
+condominios.webp   https://www.pexels.com/photo/1743555/
+pos-obra.webp      https://www.pexels.com/photo/3990359/
+profunda.webp      https://www.pexels.com/photo/4239146/

@@ -1,0 +1,15 @@
+Fotografias provisórias (Pexels, Licença Pexels).
+Substituir por fotografias reais da Maxilimpo mantendo o nome do ficheiro e a proporção.
+
+hero.webp (1100x1400) / hero-2x.webp / hero-mobile.webp
+  Pexels 9462320 — profissional a preparar a roupa de cama
+  https://www.pexels.com/photo/9462320/
+
+sobre.webp (1000x800)
+  Pexels 3768910 — a limpar uma janela
+  https://www.pexels.com/photo/3768910/
+
+mapa-barcelos-1400.webp / mapa-barcelos-2560.webp
+  Mapa © OpenStreetMap contributors (ODbL), tiles z12 combinados e recoloridos na paleta.
+  Atribuição obrigatória visível na página (canto do mapa).
+  https://www.openstreetmap.org/copyright

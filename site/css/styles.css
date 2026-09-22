@@ -287,16 +287,18 @@ p, li, blockquote, figcaption { text-wrap: pretty; }
 @media (max-width: 979px) { .hero-wrap { max-width: 1140px; margin-inline: auto; padding-inline: var(--gutter); } }
 
 .hero h1 {
+  position: relative;
   margin: 0;
   font-size: clamp(2.35rem, 1.1rem + 3.6vw, 3.9rem);
-  line-height: .98; letter-spacing: -.04em; text-transform: uppercase;
+  line-height: 1.24; letter-spacing: -.04em; text-transform: uppercase;
   color: var(--navy);
 }
+/* o destaque acompanha cada linha, em vez de um retângulo único */
 .hero h1 .hl {
-  position: relative;
-  display: inline-block; margin-top: .18em; padding: .08em .3em .15em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  padding: .04em .26em .1em;
   background: var(--green); color: var(--white); border-radius: 6px;
-  box-shadow: 0 18px 34px -20px rgba(47, 125, 6, .95);
+  box-shadow: 0 16px 30px -22px rgba(47, 125, 6, .95);
 }
 /* brilhos do logótipo junto ao título */
 .hl-spark {
@@ -304,8 +306,12 @@ p, li, blockquote, figcaption { text-wrap: pretty; }
   pointer-events: none;
 }
 .hl-spark svg { width: 100%; height: 100%; fill: currentColor; stroke: none; }
-.hl-spark--a { width: .32em; height: .32em; right: -.46em; top: -.18em; }
-.hl-spark--b { width: .18em; height: .18em; right: -.72em; top: .34em; color: var(--water); }
+.hl-spark--a { width: .3em; height: .3em; right: -.5em; top: 1.12em; }
+.hl-spark--b { width: .17em; height: .17em; right: -.78em; top: 1.62em; color: var(--water); }
+@media (max-width: 979px) {
+  .hl-spark--a { right: -.15em; top: 1.05em; }
+  .hl-spark--b { right: -.42em; top: 1.55em; }
+}
 @media (prefers-reduced-motion: no-preference) {
   .hl-spark--a { animation: twinkle 4.5s ease-in-out infinite alternate; }
   .hl-spark--b { animation: twinkle 3.6s ease-in-out .8s infinite alternate; }

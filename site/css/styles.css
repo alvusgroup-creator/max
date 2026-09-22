@@ -255,17 +255,17 @@ p, li, blockquote, figcaption { text-wrap: pretty; }
 .arc--photo { background: var(--tint); }
 .arc--photo img { position: absolute; top: 0; height: 100%; object-fit: cover; }
 /* a foto ocupa exatamente a parte do arco que fica visível */
-@media (max-width: 979px) { .arc--photo img { left: 50%; transform: translateX(-50%); width: 71.5%; } }
+@media (max-width: 979px) { .arc--photo img { left: 14.25%; width: 71.5%; } }
 @media (min-width: 980px) { .arc--photo img { right: 0; width: 58.2%; } }
 
 @media (max-width: 979px) {
   .hero { padding-bottom: clamp(3.75rem, 8vw, 5rem); }
-  .hero-art { height: clamp(320px, 56vw, 460px); margin-bottom: clamp(2.5rem, 5vw, 3.25rem); }
-  .arc { left: -20%; right: -20%; top: -100px; border-radius: 0 0 50% 50% / 0 0 18% 18%; }
+  .hero-art { height: clamp(360px, 62vw, 470px); margin-bottom: clamp(2.5rem, 5vw, 3.25rem); }
+  .arc { left: -20%; right: -20%; top: -30px; border-radius: 0 0 50% 50% / 0 0 18% 18%; }
   .arc--grey { bottom: -16px; }
   .arc--blue { bottom: -7px; }
   .arc--photo { bottom: 0; }
-  .arc--photo img { object-position: 50% 28%; }
+  .arc--photo img { object-position: 50% 50%; }
   .hero-copy { text-align: center; }
 }
 @media (min-width: 980px) {
@@ -469,7 +469,7 @@ p, li, blockquote, figcaption { text-wrap: pretty; }
 .about { display: grid; gap: 3rem; align-items: center; }
 @media (min-width: 900px) { .about { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(2.5rem, 5vw, 4.5rem); } }
 .about-media { position: relative; }
-.about-media img { border-radius: var(--r-lg); width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
+.about-media img { border-radius: var(--r-lg); width: 100%; height: auto; aspect-ratio: 5 / 4; object-fit: cover; }
 .about-badge {
   position: absolute; right: -.5rem; bottom: -1.25rem; max-width: 15rem;
   padding: 1rem 1.1rem; background: var(--green-hi); color: var(--white);
@@ -660,10 +660,10 @@ p, li, blockquote, figcaption { text-wrap: pretty; }
 }
 @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .marquee figure {
-  flex: 0 0 auto; width: clamp(200px, 26vw, 300px);
+  flex: 0 0 auto; width: clamp(250px, 62vw, 300px);
   margin: 0; border-radius: var(--r); overflow: hidden; background: var(--tint);
 }
-.marquee img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.marquee img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .demo-badge {
   display: inline-flex; align-items: center; gap: .4rem;
   padding: .3rem .7rem; border-radius: 999px;
@@ -786,7 +786,7 @@ p, li, blockquote, figcaption { text-wrap: pretty; }
   .final-contacts li:has(a):hover { transform: translateY(-2px); border-color: transparent; box-shadow: var(--shadow); }
   .final-contacts li:has(a):hover .ct-value { color: var(--green); }
 }
-.final-note { margin-top: .9rem; color: var(--muted); font-size: .75rem; }
+.final-grid .final-note { margin-top: .9rem; max-width: none; color: var(--muted); font-size: .75rem; line-height: 1.5; }
 
 .final-card {
   padding: clamp(1.5rem, 3vw, 2.25rem);
@@ -942,10 +942,10 @@ dialog.modal::backdrop { background: rgba(1, 38, 77, .6); backdrop-filter: blur(
   }
 
   /* hero: entra ao carregar a página, não por scroll */
-  .js .hero .arc--photo img { opacity: 0; transform: scale(1.06); }
+  .js .hero .arc--photo img { opacity: 0; scale: 1.06; }
   .js .hero.is-ready .arc--photo img {
-    opacity: 1; transform: none;
-    transition: opacity 1s var(--ease), transform 1.4s var(--ease);
+    opacity: 1; scale: 1;
+    transition: opacity 1s var(--ease), scale 1.4s var(--ease);
   }
   .js .hero .arc--grey, .js .hero .arc--blue { opacity: 0; }
   .js .hero.is-ready .arc--grey { opacity: 1; transition: opacity .8s var(--ease) .15s; }
@@ -974,3 +974,44 @@ dialog.modal::backdrop { background: rgba(1, 38, 77, .6); backdrop-filter: blur(
 }
 .js .hl-line.is-drawn { background-size: 100% 100%; transition: background-size .9s var(--ease) .2s; }
 @media (prefers-reduced-motion: reduce) { .hl-line { background-size: 100% 100%; } }
+
+
+/* ==========================================================================
+   Afinações de telemóvel
+   ========================================================================== */
+@media (max-width: 599px) {
+  /* títulos e textos de apoio mais contidos */
+  .head p, .hero-lead { font-size: var(--s-0); }
+  .head { max-width: 30rem; margin-inline: auto; }
+
+  /* cards com mais ar por dentro */
+  .svc-card { border-radius: 22px; }
+  .svc-body { padding: 1.4rem 1.35rem 1.5rem; }
+  .who-card, .benefit { border-radius: 22px; }
+
+  /* o carrossel de serviços deixa espreitar o card seguinte */
+  .svc-track { grid-auto-columns: 82%; }
+
+  /* linha do tempo: cards um pouco mais compactos */
+  .step-card { padding: 1.4rem 1.25rem 1.35rem; }
+  .step-card h3 { font-size: 1rem; }
+
+  /* mapa: a caixa não fica tão colada ao topo */
+  .place-media { height: 260px; }
+  .place-inner { margin-top: -3rem; }
+
+  /* contactos e formulário */
+  .final-card { border-radius: 22px; padding: 1.4rem 1.2rem 1.5rem; }
+  .final-contacts li { padding: .85rem 1rem; }
+
+  /* rodapé: colunas com um separador leve entre si */
+  .site-footer .footer-grid > * + * {
+    padding-top: 2rem; border-top: 1px solid var(--line-navy); width: 100%;
+  }
+  .footer-brand p { max-width: 30rem; }
+
+  /* botões grandes o suficiente para o polegar */
+  .btn { padding: .95rem 1.5rem; }
+  .cta-row .btn, .hero-actions .btn { width: 100%; }
+  .mobile-bar .btn { padding-block: .8rem; }
+}

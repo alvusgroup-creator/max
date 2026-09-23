@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /docs/
+
+# TODO: quando houver domínio, acrescentar a linha do sitemap, por exemplo:
+# Sitemap: https://www.exemplo.pt/sitemap.xml

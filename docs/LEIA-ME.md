@@ -4,17 +4,20 @@ Stack estática: HTML + CSS + JS, sem frameworks. Fontes self-hosted (Poppins 60
 Layout próprio da Maxilimpo: **hero com foto em arco** (header flutuante, título com bloco
 de destaque, benefícios sobrepostos), serviços em carrossel, ondas entre dobras e brilhos
 flutuantes nas margens. CSS e JS escritos de raiz para este site — do projeto Silhueta só
-se mantém a direção geral de estilo (ver `../MODELO-SITE.md`).
+se mantém a direção geral de estilo (ver `MODELO-SITE.md`).
 
 ## Estrutura
 
+O site está na **raiz do repositório** (é o que a Hostinger serve a partir de
+`public_html`); este material de trabalho vive em `docs/`, bloqueado pelo
+`.htaccess` e pelo `robots.txt`. Ver o [README](../README.md) para publicar.
+
 ```
-site/
-  index.html
-  css/styles.css        sistema de design (paleta Maxilimpo no :root)
-  js/main.js            menu, carrossel, marquee, brilhos, validação e popup
-  assets/fonts/         woff2 self-hosted
-  assets/img/           logótipos, ícones, fotos (+ CREDITOS.txt por pasta)
+index.html
+css/styles.css        sistema de design (paleta Maxilimpo no :root)
+js/main.js            menu, carrossel, marquee, brilhos, validação e popup
+assets/fonts/         woff2 self-hosted
+assets/img/           logótipos, ícones, fotos (+ CREDITOS.txt por pasta)
 ```
 
 Dobra a dobra: hero em arco → benefícios (4 cards sobrepostos) → serviços (carrossel de 6 cards) →

@@ -1,0 +1,9 @@
+# Normaliza as mudanças de linha entre Windows e o servidor
+* text=auto eol=lf
+
+# Binários: nunca converter
+*.png binary
+*.webp binary
+*.ico binary
+*.woff2 binary
+*.zip binary

@@ -985,6 +985,43 @@ dialog.modal::backdrop { background: rgba(1, 38, 77, .6); backdrop-filter: blur(
 /* ==========================================================================
    Afinações de telemóvel
    ========================================================================== */
+/* Benefícios: no telemóvel, um só cartão com quatro linhas compactas
+   (empilhados como no desktop ocupavam quase um ecrã inteiro) */
+@media (max-width: 599px) {
+  .benefit-grid {
+    gap: 0;
+    background: var(--white);
+    border-radius: 22px;
+    box-shadow: 0 1px 0 var(--line), 0 24px 48px -34px rgba(1, 38, 77, .5);
+    overflow: hidden;
+  }
+  .benefit {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: .9rem;
+    align-items: center;
+    padding: .95rem 1.1rem .95rem 1.25rem;
+    background: transparent;
+    border: 0; border-radius: 0; box-shadow: none;
+  }
+  .benefit + .benefit { border-top: 1px solid var(--line); }
+  /* o fio de cor passa a uma barra vertical à esquerda */
+  .benefit::before {
+    left: 0; right: auto; top: .95rem; bottom: .95rem;
+    width: 3px; height: auto; border-radius: 0 3px 3px 0;
+    transform: none;
+  }
+  .benefit-ico {
+    grid-row: 1 / span 2;
+    width: 42px; height: 42px; margin-bottom: 0; border-radius: 13px;
+  }
+  .benefit-ico .ico { width: 20px; height: 20px; }
+  .benefit h3 { grid-column: 2; align-self: end; font-size: .9375rem; }
+  .benefit p { grid-column: 2; align-self: start; margin-top: .15rem; font-size: .8125rem; line-height: 1.45; }
+  .benefit:hover { transform: none; box-shadow: none; }
+}
+
 @media (max-width: 599px) {
   /* títulos e textos de apoio mais contidos */
   .head p, .hero-lead { font-size: var(--s-0); }
@@ -993,7 +1030,7 @@ dialog.modal::backdrop { background: rgba(1, 38, 77, .6); backdrop-filter: blur(
   /* cards com mais ar por dentro */
   .svc-card { border-radius: 22px; }
   .svc-body { padding: 1.4rem 1.35rem 1.5rem; }
-  .who-card, .benefit { border-radius: 22px; }
+  .who-card { border-radius: 22px; }
 
   /* o carrossel de serviços deixa espreitar o card seguinte */
   .svc-track { grid-auto-columns: 82%; }

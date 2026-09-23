@@ -269,14 +269,14 @@ p, li, blockquote, figcaption { text-wrap: pretty; }
   .hero-copy { text-align: center; }
 }
 @media (min-width: 980px) {
-  .hero { display: grid; grid-template-columns: 48% minmax(0, 1fr); align-items: center; min-height: min(96vh, 920px); }
+  .hero { display: grid; grid-template-columns: 48% minmax(0, 1fr); align-items: center; min-height: min(88vh, 840px); }
   .hero-art { position: absolute; inset: 0 auto 0 0; width: 48%; height: 100%; grid-column: 1; }
   .arc { top: -9%; bottom: -9%; left: -72%; width: 172%; }
   .arc--grey { transform: translateX(24px); }
   .arc--blue { transform: translateX(12px); }
   .hero-copy {
     grid-column: 2;
-    padding-block: clamp(7rem, 9.5vw, 9rem) clamp(12rem, 17vw, 17rem);
+    padding-block: clamp(7rem, 9.5vw, 9rem) clamp(9.5rem, 13vw, 13rem);
     padding-left: clamp(1.5rem, 3.5vw, 3.5rem);
     padding-right: max(var(--gutter), calc((100vw - 1140px) / 2));
   }
